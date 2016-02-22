@@ -12,6 +12,7 @@ public enum TimingFunction
     case QuadraticEaseIn
     case QuadraticEaseOut
     case QuadraticEaseInOut
+    case SineEaseInOut
     case Custom(Double -> Double)
     
     var function : (Double -> Double)
@@ -38,6 +39,9 @@ public enum TimingFunction
                         return (-2 * p * p) + (4 * p) - 1
                     }
                 }
+                
+            case .SineEaseInOut:
+                return { p in return (1 + cos(p * M_PI + M_PI)) / 2 }
                 
             case .Custom(let f):
                 return f
