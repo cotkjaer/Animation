@@ -6,31 +6,51 @@
 //  Copyright © 2016 Christian Otkjær. All rights reserved.
 //
 
-protocol AnimationDelegate
-{
-    func animationDidFinish(animation: Animation)
-}
+//protocol AnimationDelegate
+//{
+//    func animationDidFinish(animation: Animation)
+//}
 
 internal class Animation : NSObject
 {
-    internal var delegate : AnimationDelegate?
+//    internal var delegate : AnimationDelegate?
     
-    private var createdTime : Double
+    internal var completed = false
     
-    private var duration : Double
-    private var delay : Double
+    private let createdTime : Double
     
-    private var closure : (Double -> ())
-    private var timingFunction : TimingFunction
+    private let duration : Double
+    private let delay : Double
     
-    init(duration: Double = 5, delay: Double = 0, timingFunction: TimingFunction = TimingFunction.QuadraticEaseInOut, closure: Double -> ())
+    private let closure : Double -> ()
+    private let completion : Animation -> ()
+    
+    private let timingFunction : TimingFunction
+    
+    init(duration: Double = 5,
+        delay: Double = 0,
+        timingFunction: TimingFunction = .QuadraticEaseInOut,
+        closure: Double -> (),
+        completion: (Animation -> ()) = { _ in }
+        )
     {
         createdTime = NSDate.timeIntervalSinceReferenceDate()
         
         self.duration = duration
         self.delay = delay
-        self.closure = closure
         self.timingFunction = timingFunction
+        self.closure = closure
+        self.completion = completion
+    }
+    
+    private func wrapUp(completed : Bool)
+    {
+        
+        closure(1)
+        self.completed = completed
+        completion(self)
+//    delegate?.animationDidFinish(self)
+    
     }
     
     func executeAnimation()//(displayLink: CADisplayLink)
@@ -43,7 +63,8 @@ internal class Animation : NSObject
         {
             self.displayLink?.invalidate()
             self.displayLink = nil
-            closure(1)
+            
+            wrapUp(true)
         }
         else if now >= startTime
         {
@@ -52,8 +73,6 @@ internal class Animation : NSObject
             let t = timingFunction.function(rawT)
             
             closure(t)
-            
-            delegate?.animationDidFinish(self)
         }
     }
     
@@ -79,8 +98,7 @@ internal class Animation : NSObject
         }
         else
         {
-            closure(1)
-            delegate?.animationDidFinish(self)
+            wrapUp(true)
         }
     }
 }

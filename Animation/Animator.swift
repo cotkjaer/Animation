@@ -6,15 +6,51 @@
 //  Copyright © 2016 Christian Otkjær. All rights reserved.
 //
 
-public class Animator : AnimationDelegate
+public class Animator
 {
     private static let singletonAnimator = Animator()
     
-    public static func animate(duration: Double, delay: Double = 0, timingFunction: TimingFunction = TimingFunction.QuadraticEaseInOut, closure: Double -> ())
+    public static func animate(
+        duration: Double,
+        delay: Double = 0,
+        timingFunction: TimingFunction = .QuadraticEaseInOut,
+        closure: Double -> ()
+        )
     {
-        let animation = Animation(duration: duration, delay: delay, timingFunction: timingFunction, closure: closure)
-
-        singletonAnimator.addAnimation(animation)
+        animate(duration, delay: delay, timingFunction: timingFunction, closure: closure, completion: nil)
+    }
+    
+    public static func animate(
+        duration: Double,
+        delay: Double = 0,
+        timingFunction: TimingFunction = .QuadraticEaseInOut,
+        closure: Double -> (),
+        completion: (Bool -> ())? = nil
+        )
+    {
+        singletonAnimator.animate(duration,
+            delay: delay,
+            timingFunction: timingFunction,
+            closure: closure,
+            completion: completion )
+    }
+    
+    private func animate(
+        duration: Double,
+        delay: Double,
+        timingFunction: TimingFunction,
+        closure: Double -> (),
+        completion: (Bool -> ())?
+        )
+    {
+        let animation = Animation(
+            duration: duration,
+            delay: delay,
+            timingFunction: timingFunction,
+            closure: closure,
+            completion: { self.animations.remove($0); completion?($0.completed)} )
+        
+        addAnimation(animation)
     }
     
     private var animations = Set<Animation>()
@@ -22,8 +58,6 @@ public class Animator : AnimationDelegate
     private func addAnimation(animation: Animation)
     {
         guard !animations.contains(animation) else { debugPrint("already added"); return }
-        
-        animation.delegate = self
         
         animations.insert(animation)
         
@@ -35,10 +69,5 @@ public class Animator : AnimationDelegate
         {
             fatalError("Could not start animation")
         }
-    }
-    
-    func animationDidFinish(animation: Animation)
-    {
-        animations.remove(animation)
     }
 }
