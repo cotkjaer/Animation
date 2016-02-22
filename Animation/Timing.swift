@@ -45,10 +45,10 @@ public enum TimingFunction
                 }
 
             case .SineEaseIn:
-                return { p in return 1 + sin(p * M_PI_2 + M_PI) }
+                return { p in return 1 + sin(p * M_PI_2 - M_PI_2) }
                 
             case .SineEaseOut:
-                return { p in return sin(p * M_PI_2 - M_PI_2) }
+                return { p in return cos(p * M_PI_2 - M_PI_2) }
                 
             case .SineEaseInOut:
                 return { p in return (1 + cos(p * M_PI + M_PI)) / 2 }
