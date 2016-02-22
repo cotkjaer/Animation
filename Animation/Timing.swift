@@ -6,12 +6,16 @@
 //  Copyright © 2016 Christian Otkjær. All rights reserved.
 //
 
+private let π_2 = M_PI_2
+
 public enum TimingFunction
 {
     case Linear
     case QuadraticEaseIn
     case QuadraticEaseOut
     case QuadraticEaseInOut
+    case SineEaseIn
+    case SineEaseOut
     case SineEaseInOut
     case Custom(Double -> Double)
     
@@ -39,6 +43,12 @@ public enum TimingFunction
                         return (-2 * p * p) + (4 * p) - 1
                     }
                 }
+
+            case .SineEaseIn:
+                return { p in return 1 + sin(p * M_PI_2 + M_PI) }
+                
+            case .SineEaseOut:
+                return { p in return sin(p * M_PI_2 - M_PI_2) }
                 
             case .SineEaseInOut:
                 return { p in return (1 + cos(p * M_PI + M_PI)) / 2 }
