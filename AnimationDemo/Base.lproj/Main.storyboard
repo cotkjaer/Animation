@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,24 +19,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8n-CR-Nmh">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <rect key="frame" x="277" y="28" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="beginAnimating" destination="BYZ-38-t0r" eventType="touchUpInside" id="8dI-5t-Zm0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGT-Qf-TgE">
-                                <rect key="frame" x="279" y="323" width="42" height="21"/>
+                                <rect key="frame" x="279" y="66" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfU-dT-hEq">
+                                <rect key="frame" x="542" y="550" width="30" height="30"/>
+                                <state key="normal" title="plot"/>
+                                <connections>
+                                    <segue destination="rtQ-57-GoI" kind="presentation" id="tGW-xo-vfw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="S8n-CR-Nmh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Epc-0T-5U8"/>
                             <constraint firstItem="bGT-Qf-TgE" firstAttribute="top" secondItem="S8n-CR-Nmh" secondAttribute="bottom" constant="8" symbolic="YES" id="ZSu-Ia-Mrn"/>
+                            <constraint firstItem="mfU-dT-hEq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="iGf-4O-RU9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mfU-dT-hEq" secondAttribute="bottom" constant="8" symbolic="YES" id="n9w-5M-5PP"/>
                             <constraint firstItem="S8n-CR-Nmh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oYw-Mt-Xb4"/>
+                            <constraint firstItem="S8n-CR-Nmh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="qqs-J2-LaN"/>
                             <constraint firstItem="bGT-Qf-TgE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zRM-uP-dkR"/>
                         </constraints>
                     </view>
@@ -45,6 +55,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Plot-->
+        <scene sceneID="ngf-Bl-UYe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Plot" id="rtQ-57-GoI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGO-bC-7w1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="486" y="934"/>
         </scene>
     </scenes>
 </document>

@@ -13,7 +13,6 @@
 		8F57EF3C1C7703AB008420F0 /* Animation.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F57EF3B1C7703AB008420F0 /* Animation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F57EF431C7703AB008420F0 /* Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F57EF381C7703AB008420F0 /* Animation.framework */; };
 		8F57EF481C7703AB008420F0 /* AnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F57EF471C7703AB008420F0 /* AnimationTests.swift */; };
-		8F57EF531C7703F4008420F0 /* Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F57EF521C7703F4008420F0 /* Animate.swift */; };
 		8F57EF5B1C7710C4008420F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F57EF5A1C7710C4008420F0 /* AppDelegate.swift */; };
 		8F57EF5D1C7710C4008420F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F57EF5C1C7710C4008420F0 /* ViewController.swift */; };
 		8F57EF601C7710C4008420F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F57EF5E1C7710C4008420F0 /* Main.storyboard */; };
@@ -22,6 +21,9 @@
 		8F57EF701C7710C4008420F0 /* AnimationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F57EF6F1C7710C4008420F0 /* AnimationDemoUITests.swift */; };
 		8F57EF781C7710E1008420F0 /* Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F57EF381C7703AB008420F0 /* Animation.framework */; };
 		8F57EF791C7710E1008420F0 /* Animation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F57EF381C7703AB008420F0 /* Animation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FCE6ABF1C7C462B0079A587 /* Plot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FCE6ABE1C7C462B0079A587 /* Plot.storyboard */; };
+		8FCE6AC11C7C47B10079A587 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6AC01C7C47B10079A587 /* PlotView.swift */; };
+		8FCE6AC31C7C4B110079A587 /* PlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6AC21C7C4B100079A587 /* PlotViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +74,6 @@
 		8F57EF421C7703AB008420F0 /* AnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F57EF471C7703AB008420F0 /* AnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTests.swift; sourceTree = "<group>"; };
 		8F57EF491C7703AB008420F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F57EF521C7703F4008420F0 /* Animate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animate.swift; sourceTree = "<group>"; };
 		8F57EF581C7710C4008420F0 /* AnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F57EF5A1C7710C4008420F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F57EF5C1C7710C4008420F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +84,9 @@
 		8F57EF6B1C7710C4008420F0 /* AnimationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F57EF6F1C7710C4008420F0 /* AnimationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemoUITests.swift; sourceTree = "<group>"; };
 		8F57EF711C7710C4008420F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FCE6ABE1C7C462B0079A587 /* Plot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plot.storyboard; sourceTree = "<group>"; };
+		8FCE6AC01C7C47B10079A587 /* PlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
+		8FCE6AC21C7C4B100079A587 /* PlotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +150,6 @@
 			children = (
 				8F57EF3B1C7703AB008420F0 /* Animation.h */,
 				8F57EF3D1C7703AB008420F0 /* Info.plist */,
-				8F57EF521C7703F4008420F0 /* Animate.swift */,
 				8F2426F51C77675E00519AD5 /* Animator.swift */,
 				8F2426F31C77652D00519AD5 /* Animation.swift */,
 				8F2426F71C776E1200519AD5 /* Timing.swift */,
@@ -167,8 +170,11 @@
 			isa = PBXGroup;
 			children = (
 				8F57EF5A1C7710C4008420F0 /* AppDelegate.swift */,
-				8F57EF5C1C7710C4008420F0 /* ViewController.swift */,
 				8F57EF5E1C7710C4008420F0 /* Main.storyboard */,
+				8F57EF5C1C7710C4008420F0 /* ViewController.swift */,
+				8FCE6ABE1C7C462B0079A587 /* Plot.storyboard */,
+				8FCE6AC21C7C4B100079A587 /* PlotViewController.swift */,
+				8FCE6AC01C7C47B10079A587 /* PlotView.swift */,
 				8F57EF611C7710C4008420F0 /* Assets.xcassets */,
 				8F57EF631C7710C4008420F0 /* LaunchScreen.storyboard */,
 				8F57EF661C7710C4008420F0 /* Info.plist */,
@@ -339,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F57EF651C7710C4008420F0 /* LaunchScreen.storyboard in Resources */,
+				8FCE6ABF1C7C462B0079A587 /* Plot.storyboard in Resources */,
 				8F57EF621C7710C4008420F0 /* Assets.xcassets in Resources */,
 				8F57EF601C7710C4008420F0 /* Main.storyboard in Resources */,
 			);
@@ -376,7 +383,6 @@
 			files = (
 				8F2426F61C77675E00519AD5 /* Animator.swift in Sources */,
 				8F2426F41C77652D00519AD5 /* Animation.swift in Sources */,
-				8F57EF531C7703F4008420F0 /* Animate.swift in Sources */,
 				8F2426F81C776E1200519AD5 /* Timing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +400,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F57EF5D1C7710C4008420F0 /* ViewController.swift in Sources */,
+				8FCE6AC31C7C4B110079A587 /* PlotViewController.swift in Sources */,
+				8FCE6AC11C7C47B10079A587 /* PlotView.swift in Sources */,
 				8F57EF5B1C7710C4008420F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

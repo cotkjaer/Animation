@@ -8,6 +8,14 @@
 
 private let π_2 = M_PI_2
 
+private let π_1_8 = M_PI_4 / 2
+
+private let π_5_8 = π_1_8 * 5
+private let π_10_8 = π_1_8 * 10
+private let π_11_8 = π_1_8 * 11
+private let sin_π_5_8 = sin(π_5_8)
+private let sin_π_11_8 = sin(π_11_8)
+
 public enum TimingFunction
 {
     case Linear
@@ -19,7 +27,38 @@ public enum TimingFunction
     case SineEaseInOut
     case Custom(Double -> Double)
     
-    var function : (Double -> Double)
+    public init?(text: String?)
+    {
+        switch text
+        {
+        case "Linear"?:
+            self = Linear
+            
+        case "QuadraticEaseIn"?:
+            self = QuadraticEaseIn
+            
+        case "QuadraticEaseOut"?:
+            self = QuadraticEaseOut
+            
+        case "QuadraticEaseInOut"?:
+            self = QuadraticEaseInOut
+            
+        case "SineEaseIn"?:
+            self = SineEaseIn
+            
+        case "SineEaseOut"?:
+            self = SineEaseOut
+            
+        case "SineEaseInOut"?:
+            self = SineEaseInOut
+            
+        default:
+            debugPrint("Create function parser")
+            return nil
+        }
+    }
+    
+    public var function : (Double -> Double)
         {
             switch self
             {
@@ -45,14 +84,14 @@ public enum TimingFunction
                 }
 
             case .SineEaseIn:
-                return { p in return 1 + sin(p * M_PI_2 - M_PI_2) }
+                return { 1 - sin(π_11_8 + $0 * π_5_8) / sin_π_11_8 }
                 
             case .SineEaseOut:
-                return { p in return cos(p * M_PI_2 - M_PI_2) }
+                return { t in return sin(t * π_5_8) / sin_π_5_8 }
                 
             case .SineEaseInOut:
-                return { p in return (1 + cos(p * M_PI + M_PI)) / 2 }
-                
+                return { t in return (1 - sin(π_11_8 + t * π_10_8) / sin_π_11_8 ) / 2 }
+
             case .Custom(let f):
                 return f
             }

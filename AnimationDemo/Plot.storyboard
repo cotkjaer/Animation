@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PsK-B0-Tg5">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Plot View Controller-->
+        <scene sceneID="WTE-W2-t2a">
+            <objects>
+                <viewController id="PsK-B0-Tg5" customClass="PlotViewController" customModule="AnimationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rbm-Tk-c0B"/>
+                        <viewControllerLayoutGuide type="bottom" id="H8S-JE-lt7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ve1-NU-StZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="W4j-yd-F1C">
+                                <rect key="frame" x="3" y="28" width="754" height="28"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGU-IJ-Vjn">
+                                        <rect key="frame" x="0.0" y="0.0" width="43" height="28"/>
+                                        <state key="normal" title="Linear"/>
+                                        <connections>
+                                            <action selector="handleButton:" destination="PsK-B0-Tg5" eventType="touchUpInside" id="N3e-1w-mys"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8D-RZ-5uU">
+                                        <rect key="frame" x="55" y="0.0" width="113" height="28"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="QuadraticEaseIn"/>
+                                        <connections>
+                                            <action selector="handleButton:" destination="PsK-B0-Tg5" eventType="touchUpInside" id="ge4-6u-bL7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynS-Qd-onC">
+                                        <rect key="frame" x="180" y="0.0" width="138" height="28"/>
+                                        <color key="tintColor" red="0.98039215690000003" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="QuadraticEaseInOut"/>
+                                        <connections>
+                                            <action selector="handleButton:" destination="PsK-B0-Tg5" eventType="touchUpInside" id="5bg-9Y-nWo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbe-BQ-QM0">
+                                        <rect key="frame" x="330" y="0.0" width="125" height="28"/>
+                                        <color key="tintColor" red="1" green="0.86817904459999995" blue="0.071721377310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="QuadraticEaseOut"/>
+                                        <connections>
+                                            <action selector="handleButton:" destination="PsK-B0-Tg5" eventType="touchUpInside" id="9Ds-di-ccL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iaj-Zp-OMh">
+                                        <rect key="frame" x="467" y="0.0" width="75" height="28"/>
+                                        <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="SineEaseIn"/>
+                                        <connections>
+                                            <action selector="handleButton:" destination="PsK-B0-Tg5" eventType="touchUpInside" id="K16-2e-9e6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nO-Tp-aNe">
+                                        <rect key="frame" x="554" y="0.0" width="100" height="28"/>
+                                        <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="SineEaseInOut"/>
+                                        <connections>
+                                            <action selector="handleButton:" destination="PsK-B0-Tg5" eventType="touchUpInside" id="jhq-2Q-HNs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlz-ni-Kas">
+                                        <rect key="frame" x="666" y="0.0" width="88" height="28"/>
+                                        <color key="tintColor" red="0.0" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="SineEaseOut"/>
+                                        <connections>
+                                            <action selector="handleButton:" destination="PsK-B0-Tg5" eventType="touchUpInside" id="CEK-8W-fiH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="eBz-ZJ-6C4"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFG-0R-1Eh">
+                                <rect key="frame" x="20" y="64" width="560" height="528"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XIn-En-u1X" customClass="PlotView" customModule="AnimationDemo" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="0.0" width="528" height="528"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="XIn-En-u1X" secondAttribute="height" multiplier="1:1" id="Dab-o1-7bi"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XIn-En-u1X" secondAttribute="trailing" priority="900" id="0yz-Jq-8sZ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XIn-En-u1X" secondAttribute="trailing" id="7Xc-ol-f6x"/>
+                                    <constraint firstItem="XIn-En-u1X" firstAttribute="centerX" secondItem="dFG-0R-1Eh" secondAttribute="centerX" id="Kj8-te-3bQ"/>
+                                    <constraint firstItem="XIn-En-u1X" firstAttribute="top" secondItem="dFG-0R-1Eh" secondAttribute="top" priority="900" id="Ucl-sY-qh9"/>
+                                    <constraint firstItem="XIn-En-u1X" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dFG-0R-1Eh" secondAttribute="top" id="sSF-dv-5O4"/>
+                                    <constraint firstItem="XIn-En-u1X" firstAttribute="centerY" secondItem="dFG-0R-1Eh" secondAttribute="centerY" id="y0G-8Q-xfm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H8S-JE-lt7" firstAttribute="top" secondItem="dFG-0R-1Eh" secondAttribute="bottom" constant="8" symbolic="YES" id="aL1-Wq-fOL"/>
+                            <constraint firstItem="dFG-0R-1Eh" firstAttribute="top" secondItem="W4j-yd-F1C" secondAttribute="bottom" constant="8" symbolic="YES" id="bxM-MN-8rd"/>
+                            <constraint firstItem="W4j-yd-F1C" firstAttribute="top" secondItem="rbm-Tk-c0B" secondAttribute="bottom" constant="8" symbolic="YES" id="cEx-9q-F1j"/>
+                            <constraint firstItem="dFG-0R-1Eh" firstAttribute="leading" secondItem="ve1-NU-StZ" secondAttribute="leadingMargin" id="hZ7-Ev-lBe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dFG-0R-1Eh" secondAttribute="trailing" id="rLD-aR-f4U"/>
+                            <constraint firstItem="W4j-yd-F1C" firstAttribute="centerX" secondItem="ve1-NU-StZ" secondAttribute="centerX" id="ukU-0I-4kr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="plotView" destination="XIn-En-u1X" id="mMk-3E-lid"/>
+                        <outletCollection property="buttons" destination="SGU-IJ-Vjn" collectionClass="NSMutableArray" id="JI9-ul-gWq"/>
+                        <outletCollection property="buttons" destination="xlz-ni-Kas" collectionClass="NSMutableArray" id="NNA-da-6ik"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VxB-NH-DlD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="585" y="435"/>
+        </scene>
+    </scenes>
+</document>
