@@ -12,9 +12,9 @@ private let π2 : CGFloat = 6.28318530717958647692528676655900576
 
 //MARK: - Animation
 
-extension CALayer
+public extension CALayer
 {
-    internal func animate(value: AnyObject, duration: Double, keyPath: String)
+    func animate(value: AnyObject, duration: Double, keyPath: String)
     {
         let animation = CABasicAnimation(keyPath: keyPath)
         
@@ -26,7 +26,6 @@ extension CALayer
         addAnimation(animation, forKey: keyPath + " animation")
     }
 }
-
 
 //MARK: - Rotation
 
