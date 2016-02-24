@@ -5,7 +5,7 @@
 //  Created by Christian Otkjær on 19/02/16.
 //  Copyright © 2016 Christian Otkjær. All rights reserved.
 //
-
+/*
 private let π_2 = M_PI_2
 
 private let π_1_8 = M_PI_4 / 2
@@ -132,3 +132,4 @@ public enum TimingFunction
     }
     */
 }
+*/

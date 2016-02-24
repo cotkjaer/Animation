@@ -21,9 +21,10 @@
 		8F57EF701C7710C4008420F0 /* AnimationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F57EF6F1C7710C4008420F0 /* AnimationDemoUITests.swift */; };
 		8F57EF781C7710E1008420F0 /* Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F57EF381C7703AB008420F0 /* Animation.framework */; };
 		8F57EF791C7710E1008420F0 /* Animation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F57EF381C7703AB008420F0 /* Animation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FCE6ABF1C7C462B0079A587 /* Plot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FCE6ABE1C7C462B0079A587 /* Plot.storyboard */; };
-		8FCE6AC11C7C47B10079A587 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6AC01C7C47B10079A587 /* PlotView.swift */; };
-		8FCE6AC31C7C4B110079A587 /* PlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6AC21C7C4B100079A587 /* PlotViewController.swift */; };
+		8FCE6AEA1C7DA2F10079A587 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FCE6AE91C7DA2F10079A587 /* Cartfile */; };
+		8FCE6AEC1C7DA4120079A587 /* Easing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCE6AEB1C7DA4120079A587 /* Easing.framework */; };
+		8FCE6AF01C7DE60F0079A587 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6AEF1C7DE60F0079A587 /* UIView.swift */; };
+		8FCE6AF21C7DF7360079A587 /* Easing.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8FCE6AEB1C7DA4120079A587 /* Easing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8FCE6AF11C7DF7110079A587 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				8FCE6AF21C7DF7360079A587 /* Easing.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -84,9 +95,9 @@
 		8F57EF6B1C7710C4008420F0 /* AnimationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F57EF6F1C7710C4008420F0 /* AnimationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemoUITests.swift; sourceTree = "<group>"; };
 		8F57EF711C7710C4008420F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FCE6ABE1C7C462B0079A587 /* Plot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plot.storyboard; sourceTree = "<group>"; };
-		8FCE6AC01C7C47B10079A587 /* PlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
-		8FCE6AC21C7C4B100079A587 /* PlotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotViewController.swift; sourceTree = "<group>"; };
+		8FCE6AE91C7DA2F10079A587 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		8FCE6AEB1C7DA4120079A587 /* Easing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Easing.framework; path = Carthage/Build/iOS/Easing.framework; sourceTree = "<group>"; };
+		8FCE6AEF1C7DE60F0079A587 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FCE6AEC1C7DA4120079A587 /* Easing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +138,8 @@
 		8F57EF2E1C7703AB008420F0 = {
 			isa = PBXGroup;
 			children = (
+				8FCE6AEB1C7DA4120079A587 /* Easing.framework */,
+				8FCE6AE91C7DA2F10079A587 /* Cartfile */,
 				8F57EF3A1C7703AB008420F0 /* Animation */,
 				8F57EF461C7703AB008420F0 /* AnimationTests */,
 				8F57EF591C7710C4008420F0 /* AnimationDemo */,
@@ -152,6 +166,7 @@
 				8F57EF3D1C7703AB008420F0 /* Info.plist */,
 				8F2426F51C77675E00519AD5 /* Animator.swift */,
 				8F2426F31C77652D00519AD5 /* Animation.swift */,
+				8FCE6AEF1C7DE60F0079A587 /* UIView.swift */,
 				8F2426F71C776E1200519AD5 /* Timing.swift */,
 			);
 			path = Animation;
@@ -172,9 +187,6 @@
 				8F57EF5A1C7710C4008420F0 /* AppDelegate.swift */,
 				8F57EF5E1C7710C4008420F0 /* Main.storyboard */,
 				8F57EF5C1C7710C4008420F0 /* ViewController.swift */,
-				8FCE6ABE1C7C462B0079A587 /* Plot.storyboard */,
-				8FCE6AC21C7C4B100079A587 /* PlotViewController.swift */,
-				8FCE6AC01C7C47B10079A587 /* PlotView.swift */,
 				8F57EF611C7710C4008420F0 /* Assets.xcassets */,
 				8F57EF631C7710C4008420F0 /* LaunchScreen.storyboard */,
 				8F57EF661C7710C4008420F0 /* Info.plist */,
@@ -213,6 +225,7 @@
 				8F57EF341C7703AB008420F0 /* Frameworks */,
 				8F57EF351C7703AB008420F0 /* Headers */,
 				8F57EF361C7703AB008420F0 /* Resources */,
+				8FCE6AF11C7DF7110079A587 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -249,7 +262,6 @@
 				8F57EF551C7710C4008420F0 /* Frameworks */,
 				8F57EF561C7710C4008420F0 /* Resources */,
 				8F57EF7C1C7710E1008420F0 /* Embed Frameworks */,
-				8FCE6ABD1C7B347D0079A587 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -344,8 +356,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FCE6AEA1C7DA2F10079A587 /* Cartfile in Resources */,
 				8F57EF651C7710C4008420F0 /* LaunchScreen.storyboard in Resources */,
-				8FCE6ABF1C7C462B0079A587 /* Plot.storyboard in Resources */,
 				8F57EF621C7710C4008420F0 /* Assets.xcassets in Resources */,
 				8F57EF601C7710C4008420F0 /* Main.storyboard in Resources */,
 			);
@@ -360,27 +372,12 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		8FCE6ABD1C7B347D0079A587 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		8F57EF331C7703AB008420F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FCE6AF01C7DE60F0079A587 /* UIView.swift in Sources */,
 				8F2426F61C77675E00519AD5 /* Animator.swift in Sources */,
 				8F2426F41C77652D00519AD5 /* Animation.swift in Sources */,
 				8F2426F81C776E1200519AD5 /* Timing.swift in Sources */,
@@ -400,8 +397,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F57EF5D1C7710C4008420F0 /* ViewController.swift in Sources */,
-				8FCE6AC31C7C4B110079A587 /* PlotViewController.swift in Sources */,
-				8FCE6AC11C7C47B10079A587 /* PlotView.swift in Sources */,
 				8F57EF5B1C7710C4008420F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +546,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Animation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -569,6 +568,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Animation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -603,6 +606,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.AnimationDemo";
@@ -615,6 +622,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.AnimationDemo";

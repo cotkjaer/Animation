@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8n-CR-Nmh">
-                                <rect key="frame" x="277" y="28" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="285" y="28" width="30" height="30"/>
+                                <state key="normal" title="Go!"/>
                                 <connections>
-                                    <action selector="beginAnimating" destination="BYZ-38-t0r" eventType="touchUpInside" id="8dI-5t-Zm0"/>
+                                    <action selector="beginAnimating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G1j-eZ-hpz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGT-Qf-TgE">
@@ -31,38 +31,142 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfU-dT-hEq">
-                                <rect key="frame" x="542" y="550" width="30" height="30"/>
-                                <state key="normal" title="plot"/>
-                                <connections>
-                                    <segue destination="rtQ-57-GoI" kind="presentation" id="tGW-xo-vfw"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HF1-vg-koI">
+                                <rect key="frame" x="-170" y="524" width="940" height="68"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1TF-ab-1Wk">
+                                        <rect key="frame" x="0.0" y="0.0" width="940" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfU-NQ-IiV">
+                                                <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Apj-fc-4WZ">
+                                                <rect key="frame" x="41" y="0.0" width="899" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="xXE-3t-Lyv"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="Linear"/>
+                                                    <segment title="Quadratic"/>
+                                                    <segment title="Cubic"/>
+                                                    <segment title="Quartic"/>
+                                                    <segment title="Quintic"/>
+                                                    <segment title="Sine"/>
+                                                    <segment title="Circular"/>
+                                                    <segment title="Exp(o)"/>
+                                                    <segment title="Cubic(o)"/>
+                                                    <segment title="Elastic(o)"/>
+                                                    <segment title="Bounce"/>
+                                                    <segment title="None"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="handleEaseInChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="shb-ni-O1n"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="98O-ab-fJk">
+                                        <rect key="frame" x="0.0" y="38" width="940" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZi-ST-CuV">
+                                                <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dCd-RT-mPB">
+                                                <rect key="frame" x="41" y="0.0" width="899" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="y8S-Ek-mHT"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="Linear"/>
+                                                    <segment title="Quadratic"/>
+                                                    <segment title="Cubic"/>
+                                                    <segment title="Quartic"/>
+                                                    <segment title="Quintic"/>
+                                                    <segment title="Sine"/>
+                                                    <segment title="Circular"/>
+                                                    <segment title="Exp(o)"/>
+                                                    <segment title="Cubic(o)"/>
+                                                    <segment title="Elastic(o)"/>
+                                                    <segment title="Bounce"/>
+                                                    <segment title="None"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="handleEaseOutChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="1wL-u1-y0k"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yZi-ST-CuV" firstAttribute="width" secondItem="UfU-NQ-IiV" secondAttribute="width" id="ob2-p9-8tn"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUW-fc-6Nf">
+                                <rect key="frame" x="20" y="95" width="560" height="421"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsM-mB-fve">
+                                        <rect key="frame" x="0.0" y="186" width="50" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" placeholder="YES" id="C1I-f0-tiO"/>
+                                            <constraint firstAttribute="width" constant="50" placeholder="YES" id="tPJ-3i-ySi"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ZsM-mB-fve" firstAttribute="leading" secondItem="QUW-fc-6Nf" secondAttribute="leading" placeholder="YES" id="ILo-Y5-Bdo"/>
+                                    <constraint firstItem="ZsM-mB-fve" firstAttribute="centerY" secondItem="QUW-fc-6Nf" secondAttribute="centerY" placeholder="YES" id="lbr-h3-ALD"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s9H-YH-9Fd">
+                                <rect key="frame" x="20" y="28" width="251" height="59"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPA-xs-sUL">
+                                        <rect key="frame" x="93" y="0.0" width="66" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5.0" borderStyle="roundedRect" placeholder="Duration" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xC-Od-5Cu">
+                                        <rect key="frame" x="87" y="29" width="77" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="s9H-YH-9Fd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3mQ-Ry-Gam"/>
+                            <constraint firstItem="s9H-YH-9Fd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="4sd-c4-NWu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HF1-vg-koI" secondAttribute="bottom" constant="8" symbolic="YES" id="BPy-lr-kkb"/>
+                            <constraint firstItem="QUW-fc-6Nf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GFd-76-0zy"/>
+                            <constraint firstItem="HF1-vg-koI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OCg-4n-bJm"/>
                             <constraint firstItem="bGT-Qf-TgE" firstAttribute="top" secondItem="S8n-CR-Nmh" secondAttribute="bottom" constant="8" symbolic="YES" id="ZSu-Ia-Mrn"/>
-                            <constraint firstItem="mfU-dT-hEq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="iGf-4O-RU9"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mfU-dT-hEq" secondAttribute="bottom" constant="8" symbolic="YES" id="n9w-5M-5PP"/>
+                            <constraint firstItem="bGT-Qf-TgE" firstAttribute="leading" secondItem="s9H-YH-9Fd" secondAttribute="trailing" constant="8" symbolic="YES" id="bdR-44-3Z3"/>
+                            <constraint firstItem="QUW-fc-6Nf" firstAttribute="top" secondItem="bGT-Qf-TgE" secondAttribute="bottom" constant="8" symbolic="YES" id="ect-QN-uMs"/>
+                            <constraint firstItem="HF1-vg-koI" firstAttribute="top" secondItem="QUW-fc-6Nf" secondAttribute="bottom" constant="8" symbolic="YES" id="f5E-fa-6Xu"/>
                             <constraint firstItem="S8n-CR-Nmh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oYw-Mt-Xb4"/>
                             <constraint firstItem="S8n-CR-Nmh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="qqs-J2-LaN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QUW-fc-6Nf" secondAttribute="trailing" id="xiB-Wb-mAi"/>
                             <constraint firstItem="bGT-Qf-TgE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zRM-uP-dkR"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="durationTextField" destination="0xC-Od-5Cu" id="BDm-XN-abf"/>
                         <outlet property="label" destination="bGT-Qf-TgE" id="oyB-oB-9oH"/>
+                        <outlet property="redBox" destination="ZsM-mB-fve" id="tDE-YW-nhO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-        </scene>
-        <!--Plot-->
-        <scene sceneID="ngf-Bl-UYe">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Plot" id="rtQ-57-GoI" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nGO-bC-7w1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="486" y="934"/>
         </scene>
     </scenes>
 </document>

@@ -6,6 +6,8 @@
 //  Copyright © 2016 Christian Otkjær. All rights reserved.
 //
 
+import Easing
+
 public class Animator
 {
     private static let singletonAnimator = Animator()
@@ -13,7 +15,7 @@ public class Animator
     public static func animate(
         duration: Double,
         delay: Double = 0,
-        timingFunction: TimingFunction = .QuadraticEaseInOut,
+        timingFunction: TimingFunction = TimingFunction(),
         closure: Double -> ()
         )
     {
@@ -23,7 +25,7 @@ public class Animator
     public static func animate(
         duration: Double,
         delay: Double = 0,
-        timingFunction: TimingFunction = .QuadraticEaseInOut,
+        timingFunction: TimingFunction = TimingFunction(),
         closure: Double -> (),
         completion: (Bool -> ())? = nil
         )

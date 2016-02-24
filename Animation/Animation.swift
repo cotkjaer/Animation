@@ -6,10 +6,7 @@
 //  Copyright © 2016 Christian Otkjær. All rights reserved.
 //
 
-//protocol AnimationDelegate
-//{
-//    func animationDidFinish(animation: Animation)
-//}
+import Easing
 
 internal class Animation : NSObject
 {
@@ -25,11 +22,11 @@ internal class Animation : NSObject
     private let closure : Double -> ()
     private let completion : Animation -> ()
     
-    private let timingFunction : TimingFunction
+    private let timingFunction : Double -> Double
     
     init(duration: Double = 5,
         delay: Double = 0,
-        timingFunction: TimingFunction = .QuadraticEaseInOut,
+        timingFunction: TimingFunction = TimingFunction(),
         closure: Double -> (),
         completion: (Animation -> ()) = { _ in }
         )
@@ -38,19 +35,16 @@ internal class Animation : NSObject
         
         self.duration = duration
         self.delay = delay
-        self.timingFunction = timingFunction
+        self.timingFunction = timingFunction.function
         self.closure = closure
         self.completion = completion
     }
     
     private func wrapUp(completed : Bool)
     {
-        
         closure(1)
         self.completed = completed
         completion(self)
-//    delegate?.animationDidFinish(self)
-    
     }
     
     func executeAnimation()//(displayLink: CADisplayLink)
@@ -68,11 +62,7 @@ internal class Animation : NSObject
         }
         else if now >= startTime
         {
-            let rawT = (now - startTime) / (endTime - startTime)
-            
-            let t = timingFunction.function(rawT)
-            
-            closure(t)
+            closure(timingFunction((now - startTime) / (endTime - startTime)))
         }
     }
     
