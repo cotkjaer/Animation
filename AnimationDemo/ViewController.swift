@@ -10,6 +10,8 @@ import UIKit
 import Animation
 import Easing
 
+private let π_2 = CGFloat(M_PI_2)
+
 extension Double
 {
     func format(f: String = "") -> String
@@ -29,6 +31,8 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,16 +48,19 @@ class ViewController: UIViewController
         
         let duration = Double(durationTextField.text ?? "0") ?? 0
         let delay = 0.1
-        let options = UIViewAnimationOptions.AllowAnimatedContent
+//        let options = UIViewAnimationOptions.AllowAnimatedContent
         
         let l = CGFloat(50)
         
         if let redBox = self.redBox, let bounds = redBox.superview?.bounds
         {
-            UIView.animate(duration: duration,
+            button.layer.animate("transform.rotation.z", byValue: π_2, duration: duration, timing: timingFunction)
+            
+            UIView.animate(
+                duration: duration,
                 delay: delay,
                 timing: timingFunction,
-                options: options,
+//                options: options,
                 animations: {
                     
                     let t = CGFloat($0)
@@ -61,9 +68,6 @@ class ViewController: UIViewController
                     let s = l + t * l
                     
                     redBox.frame = CGRect(x: (bounds.width - l * 2) * t, y: bounds.midY - s / 2, width: s, height: s)
-//                    redBox.center = CGPoint(
-//                        x: bounds.minX + redBox.bounds.midX + CGFloat($0) * (bounds.width - redBox.bounds.width),
-//                        y: bounds.midY)
                 },
                 completion: { completed in
                     button.enabled = completed

@@ -7,10 +7,51 @@
 //
 
 import UIKit
+import Easing
 
 private let π2 : CGFloat = 6.28318530717958647692528676655900576
 
 //MARK: - Animation
+
+private let framesPerSecond = 30.0
+
+public extension CALayer
+{
+    func animate(keyPath: String, byValue delta: CGFloat, duration: Double, timing: TimingFunction)
+    {
+        if let valueNow = presentationLayer()?.valueForKeyPath(keyPath) as? CGFloat
+        {
+            animate(keyPath, toValue: valueNow + delta, duration: duration, timing: timing)
+        }
+    }
+    
+    func animate(keyPath: String, toValue value: CGFloat, duration: Double, timing: TimingFunction)
+    {
+        if let valueNow = presentationLayer()?.valueForKeyPath(keyPath) as? CGFloat
+        {
+            let frames = ceil(duration * framesPerSecond)
+
+            func lerp(factor: Double) -> CGFloat
+            {
+                let t = CGFloat(timing.function(factor / frames))
+                
+                return valueNow * CGFloat(1 - t) + value * t
+            }
+
+            let animation = CAKeyframeAnimation(keyPath: keyPath)
+            
+            animation.values = 0.0.stride(through: frames, by: 1).map(lerp)
+            
+            animation.calculationMode = kCAAnimationCubicPaced
+            animation.duration = duration
+        
+            setValue(value, forKeyPath: keyPath)
+
+            addAnimation(animation, forKey: keyPath + " animation")
+        }
+    }
+}
+
 
 public extension CALayer
 {
