@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8F2426F41C77652D00519AD5 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2426F31C77652D00519AD5 /* Animation.swift */; };
 		8F2426F61C77675E00519AD5 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2426F51C77675E00519AD5 /* Animator.swift */; };
-		8F2426F81C776E1200519AD5 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2426F71C776E1200519AD5 /* Timing.swift */; };
+		8F55D7D11D4F935200E58FBB /* Easing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCE6AEB1C7DA4120079A587 /* Easing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F57EF3C1C7703AB008420F0 /* Animation.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F57EF3B1C7703AB008420F0 /* Animation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F57EF431C7703AB008420F0 /* Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F57EF381C7703AB008420F0 /* Animation.framework */; };
 		8F57EF481C7703AB008420F0 /* AnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F57EF471C7703AB008420F0 /* AnimationTests.swift */; };
@@ -61,6 +61,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8F55D7D11D4F935200E58FBB /* Easing.framework in Embed Frameworks */,
 				8F57EF791C7710E1008420F0 /* Animation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -81,7 +82,6 @@
 /* Begin PBXFileReference section */
 		8F2426F31C77652D00519AD5 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		8F2426F51C77675E00519AD5 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		8F2426F71C776E1200519AD5 /* Timing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
 		8F57EF381C7703AB008420F0 /* Animation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Animation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F57EF3B1C7703AB008420F0 /* Animation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		8F57EF3D1C7703AB008420F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,7 +174,6 @@
 				8F2426F31C77652D00519AD5 /* Animation.swift */,
 				8FCE6AEF1C7DE60F0079A587 /* UIView.swift */,
 				8FCE6B001C7E052F0079A587 /* Layer */,
-				8F2426F71C776E1200519AD5 /* Timing.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -400,7 +399,6 @@
 				8FCE6AFF1C7E04220079A587 /* CALayer.swift in Sources */,
 				8FCE6B251C7F1CA10079A587 /* Shake.swift in Sources */,
 				8F2426F41C77652D00519AD5 /* Animation.swift in Sources */,
-				8F2426F81C776E1200519AD5 /* Timing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -80,7 +80,7 @@ class ViewController: UIViewController
             closure:
             {
                 self.label?.text = String(format: "%.03f", $0)
-                counter++
+                counter += 1
             }) { (completed) -> () in
                 button.enabled = completed
         }

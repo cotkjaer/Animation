@@ -81,7 +81,7 @@ internal class Animation : NSObject
         
         if endTime > startTime + 0.02
         {
-            displayLink = CADisplayLink(target: self, selector: Selector("executeAnimation"))
+            displayLink = CADisplayLink(target: self, selector: #selector(Animation.executeAnimation))
 //            displayLink?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             
             displayLink?.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
