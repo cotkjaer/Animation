@@ -27,14 +27,14 @@ public extension UIView
      Animation with the given timing function
      */
     static func animate(
-        duration duration: Double,
+        withDuration duration: Double,
         delay: Double = 0,
         timing: TimingFunction,
 //        options: UIViewAnimationOptions = [],
-        animations: Double -> (),
-        completion: (Bool -> ())? = nil)
+        animations: @escaping (Double) -> (),
+        completion: ((Bool) -> ())? = nil)
     {
-        let keyframeOptions = UIViewKeyframeAnimationOptions.CalculationModeCubicPaced
+        let keyframeOptions = UIViewKeyframeAnimationOptions.calculationModeCubicPaced
        
         //TODO: transfer other options
         
@@ -46,13 +46,13 @@ public extension UIView
         
         animations(0)
         
-        animateKeyframesWithDuration(duration,
+        animateKeyframes(withDuration: duration,
             delay: delay,
             options: keyframeOptions, animations:
             {
-                for frame in 0.0.stride(through: frames, by: 1)
+                for frame in stride(from: 0.0, through: frames, by: 1)
                 {
-                    UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 0, animations: {
+                    UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0, animations: {
                         animations(function(frame / frames))
                     })
                 }

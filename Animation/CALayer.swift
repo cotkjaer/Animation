@@ -17,21 +17,21 @@ private let framesPerSecond = 30.0
 
 public extension CALayer
 {
-    func animate(keyPath: String, byValue delta: CGFloat, duration: Double, timing: TimingFunction)
+    func animate(_ keyPath: String, byValue delta: CGFloat, duration: Double, timing: TimingFunction)
     {
-        if let valueNow = presentationLayer()?.valueForKeyPath(keyPath) as? CGFloat
+        if let valueNow = presentation()?.value(forKeyPath: keyPath) as? CGFloat
         {
             animate(keyPath, toValue: valueNow + delta, duration: duration, timing: timing)
         }
     }
     
-    func animate(keyPath: String, toValue value: CGFloat, duration: Double, timing: TimingFunction)
+    func animate(_ keyPath: String, toValue value: CGFloat, duration: Double, timing: TimingFunction)
     {
-        if let valueNow = presentationLayer()?.valueForKeyPath(keyPath) as? CGFloat
+        if let valueNow = presentation()?.value(forKeyPath: keyPath) as? CGFloat
         {
             let frames = ceil(duration * framesPerSecond)
 
-            func lerp(factor: Double) -> CGFloat
+            func lerp(_ factor: Double) -> CGFloat
             {
                 let t = CGFloat(timing.function(factor / frames))
                 
@@ -40,14 +40,14 @@ public extension CALayer
 
             let animation = CAKeyframeAnimation(keyPath: keyPath)
             
-            animation.values = 0.0.stride(through: frames, by: 1).map(lerp)
+            animation.values = stride(from: 0.0, through: frames, by: 1).map(lerp)
             
             animation.calculationMode = kCAAnimationCubicPaced
             animation.duration = duration
         
             setValue(value, forKeyPath: keyPath)
 
-            addAnimation(animation, forKey: keyPath + " animation")
+            add(animation, forKey: keyPath + " animation")
         }
     }
 }
@@ -55,16 +55,42 @@ public extension CALayer
 
 public extension CALayer
 {
-    func animate(value: AnyObject, duration: Double, keyPath: String)
+    private func animationFor(keyPath: String, duration: Double) -> CABasicAnimation
     {
         let animation = CABasicAnimation(keyPath: keyPath)
         
         animation.duration = duration
-        animation.fromValue = valueForKeyPath(keyPath)
+        animation.fromValue = self.value(forKeyPath: keyPath)
+
+        return animation
+    }
+    
+    func animate(keyPath: String, to value: CGFloat, duration: Double)
+    {
+        let animation = animationFor(keyPath: keyPath, duration: duration)
         
         setValue(value, forKeyPath: keyPath)
         
-        addAnimation(animation, forKey: keyPath + " animation")
+        add(animation, forKey: keyPath + " animation")
+    }
+
+    func animate(duration: Double, keyPath: String, to value: AnyObject)
+    {
+        let animation = animationFor(keyPath: keyPath, duration: duration)
+        
+        setValue(value, forKeyPath: keyPath)
+        
+        add(animation, forKey: keyPath + " animation")
+    }
+
+    
+    func animate(_ value: AnyObject, duration: Double, keyPath: String)
+    {
+        let animation = animationFor(keyPath: keyPath, duration: duration)
+
+        setValue(value, forKeyPath: keyPath)
+        
+        add(animation, forKey: keyPath + " animation")
     }
 }
 
@@ -77,12 +103,12 @@ public extension CALayer
     //TODO: Move to non-animation framework
     public var rotation : CGFloat
         {
-        get { return valueForKeyPath(CALayerRotationKeyPath) as? CGFloat ?? 0 }
+        get { return value(forKeyPath: CALayerRotationKeyPath) as? CGFloat ?? 0 }
         set { setValue(newValue, forKeyPath: CALayerRotationKeyPath) }
     }
     
     func animateRotationTo(
-        angle: CGFloat,
+        _ angle: CGFloat,
         clockwise: Bool = true,
         duration: Double)
     {
@@ -96,11 +122,11 @@ public extension CALayer
     }
     
     func animateRotateBy(
-        deltaAngle: CGFloat,
+        _ deltaAngle: CGFloat,
         duration: Double = 0.1,
         timingFunctionName: String = kCAMediaTimingFunctionLinear)
     {
-        if let currentRotation = valueForKeyPath(CALayerRotationKeyPath) as? CGFloat
+        if let currentRotation = value(forKeyPath: CALayerRotationKeyPath) as? CGFloat
         {
             let animation = CAKeyframeAnimation(keyPath: CALayerRotationKeyPath)
             
@@ -118,7 +144,7 @@ public extension CALayer
                 currentRotation + deltaAngle
             ]
             
-            var timingFunctions = Array<String>(count: 3, repeatedValue: kCAMediaTimingFunctionLinear)
+            var timingFunctions = Array<String>(repeating: kCAMediaTimingFunctionLinear, count: 3)
             
             switch timingFunctionName
             {
@@ -139,7 +165,7 @@ public extension CALayer
             animation.timingFunctions = timingFunctions.map { CAMediaTimingFunction(name: $0) }
             
             setValue(currentRotation + deltaAngle, forKeyPath: CALayerRotationKeyPath)
-            addAnimation(animation, forKey:CALayerRotationKeyPath)
+            add(animation, forKey:CALayerRotationKeyPath)
         }
     }
 }

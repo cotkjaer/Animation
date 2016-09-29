@@ -19,17 +19,17 @@ public extension UIView
 
 public extension CALayer
 {
-    func shake(duration: Double = 0.4)
+    func shake(_ duration: Double = 0.4)
     {
         let animation = CAKeyframeAnimation(keyPath: "position.x")
         
         animation.values = [0, 10, -10, 10, 0]
-        animation.keyTimes = [0.0, 1.0 / 6.0, 3.0 / 6.0, 5.0 / 6.0, 1.0]
+        animation.keyTimes = [0.0, 0.2, 0.5, 0.8, 1.0]
         animation.duration = duration
         
-        animation.additive = true
+        animation.isAdditive = true
         
-        addAnimation(animation, forKey:"shake")
+        add(animation, forKey:"shake")
     }
 }
 

@@ -14,7 +14,7 @@ private let π_2 = CGFloat(M_PI_2)
 
 extension Double
 {
-    func format(f: String = "") -> String
+    func format(_ f: String = "") -> String
     {
         return String(format: "%\(f)f", self)
     }
@@ -40,15 +40,15 @@ class ViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func beginAnimating(button: UIButton)
+    @IBAction func beginAnimating(_ button: UIButton)
     {
-        button.enabled = false
+        button.isEnabled = false
         
         var counter = 0
         
         let duration = Double(durationTextField.text ?? "0") ?? 0
         let delay = 0.1
-//        let options = UIViewAnimationOptions.AllowAnimatedContent
+//        let options = UIViewAnimationOptions.allowAnimatedContent
         
         let l = CGFloat(50)
         
@@ -57,7 +57,7 @@ class ViewController: UIViewController
             button.layer.animate("transform.rotation.z", byValue: π_2, duration: duration, timing: timingFunction)
             
             UIView.animate(
-                duration: duration,
+                withDuration: duration,
                 delay: delay,
                 timing: timingFunction,
 //                options: options,
@@ -70,11 +70,11 @@ class ViewController: UIViewController
                     redBox.frame = CGRect(x: (bounds.width - l * 2) * t, y: bounds.midY - s / 2, width: s, height: s)
                 },
                 completion: { completed in
-                    button.enabled = completed
+                    button.isEnabled = completed
             })
         }
 
-        Animator.animate(duration,
+        Animator.animate(duration: duration,
             delay: delay,
             timingFunction: timingFunction,
             closure:
@@ -82,7 +82,7 @@ class ViewController: UIViewController
                 self.label?.text = String(format: "%.03f", $0)
                 counter += 1
             }) { (completed) -> () in
-                button.enabled = completed
+                button.isEnabled = completed
         }
 
     }
@@ -91,20 +91,20 @@ class ViewController: UIViewController
     
     let curves : Array<EasingCurve> =
     [
-        .Linear, // 0
-        .Quadratic,
-        .Cubic,
-        .Quartic,
-        .Quintic,
-        .Sine, // 5
-        .Circular,
-        .Exponential,
-        .OvershootingCubic,
-        .Elastic,
-        .Bounce
+        .linear, // 0
+        .quadratic,
+        .cubic,
+        .quartic,
+        .quintic,
+        .sine, // 5
+        .circular,
+        .exponential,
+        .overshootingCubic,
+        .elastic,
+        .bounce
     ]
     
-    func handleChange(index: Int, @noescape closure: (EasingCurve?)->())
+    func handleChange(_ index: Int, closure: (EasingCurve?)->())
     {
         if index < 0 || index >= curves.count
         {
@@ -116,7 +116,7 @@ class ViewController: UIViewController
         }
     }
     
-    @IBAction func handleEaseInChange(sender: UISegmentedControl)
+    @IBAction func handleEaseInChange(_ sender: UISegmentedControl)
     {
         handleChange(sender.selectedSegmentIndex) {
             timingFunction.easeIn = $0
@@ -124,7 +124,7 @@ class ViewController: UIViewController
     }
     
     
-    @IBAction func handleEaseOutChange(sender: UISegmentedControl)
+    @IBAction func handleEaseOutChange(_ sender: UISegmentedControl)
     {
         handleChange(sender.selectedSegmentIndex) {
             timingFunction.easeOut = $0

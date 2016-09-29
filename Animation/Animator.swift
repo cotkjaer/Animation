@@ -8,41 +8,32 @@
 
 import Easing
 
-public class Animator
+open class Animator
 {
-    private static let singletonAnimator = Animator()
+    fileprivate static let singletonAnimator = Animator()
     
-    public static func animate(
+    open static func animate(
         duration: Double,
         delay: Double = 0,
         timingFunction: TimingFunction = TimingFunction(),
-        closure: Double -> ()
+        closure: @escaping (Double) -> (),
+        completion: @escaping (Bool) -> () = { _ in return }
         )
     {
-        animate(duration, delay: delay, timingFunction: timingFunction, closure: closure, completion: nil)
-    }
-    
-    public static func animate(
-        duration: Double,
-        delay: Double = 0,
-        timingFunction: TimingFunction = TimingFunction(),
-        closure: Double -> (),
-        completion: (Bool -> ())? = nil
-        )
-    {
-        singletonAnimator.animate(duration,
+        singletonAnimator.animate(
+            duration: duration,
             delay: delay,
             timingFunction: timingFunction,
             closure: closure,
-            completion: completion )
+            completion: completion)
     }
     
-    private func animate(
+    fileprivate func animate(
         duration: Double,
         delay: Double,
         timingFunction: TimingFunction,
-        closure: Double -> (),
-        completion: (Bool -> ())?
+        closure: @escaping (Double) -> (),
+        completion: @escaping (Bool) -> ()
         )
     {
         let animation = Animation(
@@ -50,26 +41,21 @@ public class Animator
             delay: delay,
             timingFunction: timingFunction,
             closure: closure,
-            completion: { self.animations.remove($0); completion?($0.completed)} )
+            completion: { self.animations.remove($0); completion($0.completed) } )
         
         addAnimation(animation)
     }
     
-    private var animations = Set<Animation>()
+    fileprivate var animations = Set<Animation>()
 
-    private func addAnimation(animation: Animation)
+    fileprivate func addAnimation(_ animation: Animation)
     {
         guard !animations.contains(animation) else { debugPrint("already added"); return }
         
         animations.insert(animation)
         
-        if animations.contains(animation)
-        {
-            animation.begin()
-        }
-        else
-        {
-            fatalError("Could not start animation")
-        }
+        guard animations.contains(animation) else { fatalError("Could not start animation") }
+        
+        animation.begin()
     }
 }

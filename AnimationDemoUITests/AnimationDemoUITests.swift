@@ -32,7 +32,7 @@ class AnimationDemoUITests: XCTestCase {
     
     func test_animation()
     {
-        let expectation = expectationWithDescription("animation did finish")
+        let expectation = self.expectation(description: "animation did finish")
         
         var counter = 0
 
@@ -47,7 +47,7 @@ class AnimationDemoUITests: XCTestCase {
                 }
         }
         
-        waitForExpectationsWithTimeout(5) { error in
+        waitForExpectations(timeout: 5) { error in
             
             if let error = error
             {

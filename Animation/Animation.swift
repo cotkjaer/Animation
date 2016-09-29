@@ -10,28 +10,26 @@ import Easing
 
 internal class Animation : NSObject
 {
-//    internal var delegate : AnimationDelegate?
-    
     internal var completed = false
     
-    private let createdTime : Double
+    fileprivate let createdTime : Double
     
-    private let duration : Double
-    private let delay : Double
+    fileprivate let duration : Double
+    fileprivate let delay : Double
     
-    private let closure : Double -> ()
-    private let completion : Animation -> ()
+    fileprivate let closure : (Double) -> ()
+    fileprivate let completion : (Animation) -> ()
     
-    private let timingFunction : Double -> Double
+    fileprivate let timingFunction : (Double) -> Double
     
     init(duration: Double = 5,
         delay: Double = 0,
         timingFunction: TimingFunction = TimingFunction(),
-        closure: Double -> (),
-        completion: (Animation -> ()) = { _ in }
+        closure: @escaping (Double) -> (),
+        completion: @escaping ((Animation) -> ()) = { _ in }
         )
     {
-        createdTime = NSDate.timeIntervalSinceReferenceDate()
+        createdTime = Date.timeIntervalSinceReferenceDate
         
         self.duration = duration
         self.delay = delay
@@ -40,7 +38,7 @@ internal class Animation : NSObject
         self.completion = completion
     }
     
-    private func wrapUp(completed : Bool)
+    fileprivate func wrapUp(_ completed : Bool)
     {
         closure(1)
         self.completed = completed
@@ -51,7 +49,7 @@ internal class Animation : NSObject
     {
         //        guard displayLink == self.displayLink else { return }
         
-        let now = NSDate.timeIntervalSinceReferenceDate()
+        let now = Date.timeIntervalSinceReferenceDate
         
         if now > endTime
         {
@@ -66,15 +64,15 @@ internal class Animation : NSObject
         }
     }
     
-    private var startTime : Double = NSDate.distantPast().timeIntervalSinceReferenceDate
-    private var endTime : Double = NSDate.distantPast().timeIntervalSinceReferenceDate
-    private var displayLink : CADisplayLink?
+    fileprivate var startTime : Double = Date.distantPast.timeIntervalSinceReferenceDate
+    fileprivate var endTime : Double = Date.distantPast.timeIntervalSinceReferenceDate
+    fileprivate var displayLink : CADisplayLink?
     
     func begin()
     {
         guard displayLink == nil else { return }
         
-        let now = NSDate.timeIntervalSinceReferenceDate()
+        let now = Date.timeIntervalSinceReferenceDate
         
         startTime = max(now, createdTime + delay)
         endTime = startTime + duration
@@ -84,7 +82,7 @@ internal class Animation : NSObject
             displayLink = CADisplayLink(target: self, selector: #selector(Animation.executeAnimation))
 //            displayLink?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             
-            displayLink?.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+            displayLink?.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
         }
         else
         {
@@ -92,11 +90,3 @@ internal class Animation : NSObject
         }
     }
 }
-
-
-//MARK: - Hashable
-
-//func == (lhs: Animation, rhs:Animation) -> Bool
-//{
-//    return lhs.hashValue == rhs.hashValue
-//}
