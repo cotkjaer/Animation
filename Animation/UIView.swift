@@ -10,8 +10,6 @@ import Easing
 
 // MARK: - Animation
 
-// MARK: - <#comment#>
-
 extension UIViewAnimationOptions
 {
     var keyframeOptions : UIViewKeyframeAnimationOptions
