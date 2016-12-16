@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8F2426F41C77652D00519AD5 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2426F31C77652D00519AD5 /* Animation.swift */; };
 		8F2426F61C77675E00519AD5 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2426F51C77675E00519AD5 /* Animator.swift */; };
-		8F55D7D11D4F935200E58FBB /* Easing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCE6AEB1C7DA4120079A587 /* Easing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F57EF3C1C7703AB008420F0 /* Animation.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F57EF3B1C7703AB008420F0 /* Animation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F57EF431C7703AB008420F0 /* Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F57EF381C7703AB008420F0 /* Animation.framework */; };
 		8F57EF481C7703AB008420F0 /* AnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F57EF471C7703AB008420F0 /* AnimationTests.swift */; };
@@ -21,13 +20,37 @@
 		8F57EF701C7710C4008420F0 /* AnimationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F57EF6F1C7710C4008420F0 /* AnimationDemoUITests.swift */; };
 		8F57EF781C7710E1008420F0 /* Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F57EF381C7703AB008420F0 /* Animation.framework */; };
 		8F57EF791C7710E1008420F0 /* Animation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F57EF381C7703AB008420F0 /* Animation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FC022611DA52CB0009BC08C /* Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F57EF381C7703AB008420F0 /* Animation.framework */; };
+		8FC022641DA52D0F009BC08C /* Easing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC022631DA52D0F009BC08C /* Easing.framework */; };
+		8FC022651DA52D2F009BC08C /* Easing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC022631DA52D0F009BC08C /* Easing.framework */; };
+		8FC022661DA52D36009BC08C /* Easing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC022631DA52D0F009BC08C /* Easing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FC022671DA52D3C009BC08C /* Easing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC022631DA52D0F009BC08C /* Easing.framework */; };
+		8FC022681DA52D42009BC08C /* Easing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC022631DA52D0F009BC08C /* Easing.framework */; };
+		8FC0226A1DA52DE0009BC08C /* Easing.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8FC022631DA52D0F009BC08C /* Easing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FC0226C1DA52E21009BC08C /* Easing.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8FC022631DA52D0F009BC08C /* Easing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FC0226E1DA63AD0009BC08C /* CALayer+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0226D1DA63AD0009BC08C /* CALayer+Rotate.swift */; };
+		8FC022701DA63C1F009BC08C /* IdentityTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0226F1DA63C1F009BC08C /* IdentityTransform.swift */; };
+		8FC022721DA63EAB009BC08C /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC022711DA63EAB009BC08C /* ActivityIndicatorView.swift */; };
+		8FC022741DA63F81009BC08C /* ProgressIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC022731DA63F81009BC08C /* ProgressIndicatorView.swift */; };
+		8FC022761DA648F0009BC08C /* Rotate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FC022751DA648F0009BC08C /* Rotate.storyboard */; };
+		8FC022781DA64901009BC08C /* RotateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC022771DA64901009BC08C /* RotateViewController.swift */; };
+		8FC0227A1DA654B0009BC08C /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC022791DA654B0009BC08C /* IndicatorView.swift */; };
+		8FC0227C1DA65A60009BC08C /* LiquidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0227B1DA65A60009BC08C /* LiquidView.swift */; };
+		8FC0227E1DA65EEA009BC08C /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FC0227D1DA65EEA009BC08C /* Progress.storyboard */; };
+		8FC022801DA65EFF009BC08C /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0227F1DA65EFF009BC08C /* ProgressViewController.swift */; };
+		8FC022821DA67A9F009BC08C /* PeepholeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC022811DA67A9F009BC08C /* PeepholeView.swift */; };
+		8FC022841DA67DE1009BC08C /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC022831DA67DE1009BC08C /* CGFloat.swift */; };
+		8FC022861DA67E4C009BC08C /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC022851DA67E4C009BC08C /* CGPoint.swift */; };
+		8FC022881DA68B30009BC08C /* LiquidLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC022871DA68B30009BC08C /* LiquidLayer.swift */; };
 		8FCE6AEA1C7DA2F10079A587 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FCE6AE91C7DA2F10079A587 /* Cartfile */; };
-		8FCE6AEC1C7DA4120079A587 /* Easing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCE6AEB1C7DA4120079A587 /* Easing.framework */; };
 		8FCE6AF01C7DE60F0079A587 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6AEF1C7DE60F0079A587 /* UIView.swift */; };
-		8FCE6AF21C7DF7360079A587 /* Easing.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8FCE6AEB1C7DA4120079A587 /* Easing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FCE6AFE1C7E04220079A587 /* CAShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6AFC1C7E04220079A587 /* CAShapeLayer.swift */; };
 		8FCE6AFF1C7E04220079A587 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6AFD1C7E04220079A587 /* CALayer.swift */; };
 		8FCE6B251C7F1CA10079A587 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6B241C7F1CA10079A587 /* Shake.swift */; };
+		8FEDF8181DA79AF5009C9BB6 /* Wave.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FEDF8171DA79AF5009C9BB6 /* Wave.storyboard */; };
+		8FEDF81C1DA7B24F009C9BB6 /* LiveShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDF81B1DA7B24F009C9BB6 /* LiveShapeView.swift */; };
+		8FEDF81E1DA7B476009C9BB6 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDF81D1DA7B476009C9BB6 /* WaveView.swift */; };
+		8FEDF8201DA7DB49009C9BB6 /* WaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDF81F1DA7DB49009C9BB6 /* WaveViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +84,30 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8F55D7D11D4F935200E58FBB /* Easing.framework in Embed Frameworks */,
 				8F57EF791C7710E1008420F0 /* Animation.framework in Embed Frameworks */,
+				8FC022661DA52D36009BC08C /* Easing.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FC022691DA52DD1009BC08C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8FC0226A1DA52DE0009BC08C /* Easing.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FC0226B1DA52E16009BC08C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8FC0226C1DA52E21009BC08C /* Easing.framework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8FCE6AF11C7DF7110079A587 /* CopyFiles */ = {
@@ -73,7 +116,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				8FCE6AF21C7DF7360079A587 /* Easing.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +140,30 @@
 		8F57EF6B1C7710C4008420F0 /* AnimationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F57EF6F1C7710C4008420F0 /* AnimationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemoUITests.swift; sourceTree = "<group>"; };
 		8F57EF711C7710C4008420F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FC022631DA52D0F009BC08C /* Easing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Easing.framework; path = Carthage/Build/iOS/Easing.framework; sourceTree = "<group>"; };
+		8FC0226D1DA63AD0009BC08C /* CALayer+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Rotate.swift"; sourceTree = "<group>"; };
+		8FC0226F1DA63C1F009BC08C /* IdentityTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityTransform.swift; sourceTree = "<group>"; };
+		8FC022711DA63EAB009BC08C /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		8FC022731DA63F81009BC08C /* ProgressIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorView.swift; sourceTree = "<group>"; };
+		8FC022751DA648F0009BC08C /* Rotate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Rotate.storyboard; sourceTree = "<group>"; };
+		8FC022771DA64901009BC08C /* RotateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateViewController.swift; sourceTree = "<group>"; };
+		8FC022791DA654B0009BC08C /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		8FC0227B1DA65A60009BC08C /* LiquidView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidView.swift; sourceTree = "<group>"; };
+		8FC0227D1DA65EEA009BC08C /* Progress.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
+		8FC0227F1DA65EFF009BC08C /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		8FC022811DA67A9F009BC08C /* PeepholeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeepholeView.swift; sourceTree = "<group>"; };
+		8FC022831DA67DE1009BC08C /* CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		8FC022851DA67E4C009BC08C /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		8FC022871DA68B30009BC08C /* LiquidLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidLayer.swift; sourceTree = "<group>"; };
 		8FCE6AE91C7DA2F10079A587 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		8FCE6AEB1C7DA4120079A587 /* Easing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Easing.framework; path = Carthage/Build/iOS/Easing.framework; sourceTree = "<group>"; };
 		8FCE6AEF1C7DE60F0079A587 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8FCE6AFC1C7E04220079A587 /* CAShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAShapeLayer.swift; sourceTree = "<group>"; };
 		8FCE6AFD1C7E04220079A587 /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		8FCE6B241C7F1CA10079A587 /* Shake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		8FEDF8171DA79AF5009C9BB6 /* Wave.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wave.storyboard; sourceTree = "<group>"; };
+		8FEDF81B1DA7B24F009C9BB6 /* LiveShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveShapeView.swift; sourceTree = "<group>"; };
+		8FEDF81D1DA7B476009C9BB6 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		8FEDF81F1DA7DB49009C9BB6 /* WaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FCE6AEC1C7DA4120079A587 /* Easing.framework in Frameworks */,
+				8FC022641DA52D0F009BC08C /* Easing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F57EF431C7703AB008420F0 /* Animation.framework in Frameworks */,
+				8FC022671DA52D3C009BC08C /* Easing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F57EF781C7710E1008420F0 /* Animation.framework in Frameworks */,
+				8FC022651DA52D2F009BC08C /* Easing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +197,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FC022611DA52CB0009BC08C /* Animation.framework in Frameworks */,
+				8FC022681DA52D42009BC08C /* Easing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,13 +208,13 @@
 		8F57EF2E1C7703AB008420F0 = {
 			isa = PBXGroup;
 			children = (
-				8FCE6AEB1C7DA4120079A587 /* Easing.framework */,
 				8FCE6AE91C7DA2F10079A587 /* Cartfile */,
 				8F57EF3A1C7703AB008420F0 /* Animation */,
 				8F57EF461C7703AB008420F0 /* AnimationTests */,
 				8F57EF591C7710C4008420F0 /* AnimationDemo */,
 				8F57EF6E1C7710C4008420F0 /* AnimationDemoUITests */,
 				8F57EF391C7703AB008420F0 /* Products */,
+				8FC022621DA52D0F009BC08C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +237,16 @@
 				8F2426F51C77675E00519AD5 /* Animator.swift */,
 				8F2426F31C77652D00519AD5 /* Animation.swift */,
 				8FCE6AEF1C7DE60F0079A587 /* UIView.swift */,
+				8FC0226F1DA63C1F009BC08C /* IdentityTransform.swift */,
+				8FC022791DA654B0009BC08C /* IndicatorView.swift */,
+				8FEDF81B1DA7B24F009C9BB6 /* LiveShapeView.swift */,
+				8FC022711DA63EAB009BC08C /* ActivityIndicatorView.swift */,
+				8FC022731DA63F81009BC08C /* ProgressIndicatorView.swift */,
+				8FC0227B1DA65A60009BC08C /* LiquidView.swift */,
+				8FC022871DA68B30009BC08C /* LiquidLayer.swift */,
+				8FC022831DA67DE1009BC08C /* CGFloat.swift */,
+				8FC022851DA67E4C009BC08C /* CGPoint.swift */,
+				8FEDF81D1DA7B476009C9BB6 /* WaveView.swift */,
 				8FCE6B001C7E052F0079A587 /* Layer */,
 			);
 			path = Animation;
@@ -193,6 +267,13 @@
 				8F57EF5A1C7710C4008420F0 /* AppDelegate.swift */,
 				8F57EF5E1C7710C4008420F0 /* Main.storyboard */,
 				8F57EF5C1C7710C4008420F0 /* ViewController.swift */,
+				8FEDF8171DA79AF5009C9BB6 /* Wave.storyboard */,
+				8FEDF81F1DA7DB49009C9BB6 /* WaveViewController.swift */,
+				8FC022751DA648F0009BC08C /* Rotate.storyboard */,
+				8FC022771DA64901009BC08C /* RotateViewController.swift */,
+				8FC0227D1DA65EEA009BC08C /* Progress.storyboard */,
+				8FC022811DA67A9F009BC08C /* PeepholeView.swift */,
+				8FC0227F1DA65EFF009BC08C /* ProgressViewController.swift */,
 				8F57EF611C7710C4008420F0 /* Assets.xcassets */,
 				8F57EF631C7710C4008420F0 /* LaunchScreen.storyboard */,
 				8F57EF661C7710C4008420F0 /* Info.plist */,
@@ -209,11 +290,20 @@
 			path = AnimationDemoUITests;
 			sourceTree = "<group>";
 		};
+		8FC022621DA52D0F009BC08C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FC022631DA52D0F009BC08C /* Easing.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8FCE6B001C7E052F0079A587 /* Layer */ = {
 			isa = PBXGroup;
 			children = (
 				8FCE6AFC1C7E04220079A587 /* CAShapeLayer.swift */,
 				8FCE6AFD1C7E04220079A587 /* CALayer.swift */,
+				8FC0226D1DA63AD0009BC08C /* CALayer+Rotate.swift */,
 				8FCE6B241C7F1CA10079A587 /* Shake.swift */,
 			);
 			name = Layer;
@@ -259,6 +349,7 @@
 				8F57EF3E1C7703AB008420F0 /* Sources */,
 				8F57EF3F1C7703AB008420F0 /* Frameworks */,
 				8F57EF401C7703AB008420F0 /* Resources */,
+				8FC022691DA52DD1009BC08C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -296,6 +387,7 @@
 				8F57EF671C7710C4008420F0 /* Sources */,
 				8F57EF681C7710C4008420F0 /* Frameworks */,
 				8F57EF691C7710C4008420F0 /* Resources */,
+				8FC0226B1DA52E16009BC08C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -327,10 +419,12 @@
 					};
 					8F57EF571C7710C4008420F0 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9HQR3Y4WE5;
 						LastSwiftMigration = 0800;
 					};
 					8F57EF6A1C7710C4008420F0 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9HQR3Y4WE5;
 						LastSwiftMigration = 0800;
 						TestTargetID = 8F57EF571C7710C4008420F0;
 					};
@@ -376,9 +470,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FEDF8181DA79AF5009C9BB6 /* Wave.storyboard in Resources */,
 				8FCE6AEA1C7DA2F10079A587 /* Cartfile in Resources */,
 				8F57EF651C7710C4008420F0 /* LaunchScreen.storyboard in Resources */,
 				8F57EF621C7710C4008420F0 /* Assets.xcassets in Resources */,
+				8FC0227E1DA65EEA009BC08C /* Progress.storyboard in Resources */,
+				8FC022761DA648F0009BC08C /* Rotate.storyboard in Resources */,
 				8F57EF601C7710C4008420F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,10 +494,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FC022701DA63C1F009BC08C /* IdentityTransform.swift in Sources */,
+				8FC022741DA63F81009BC08C /* ProgressIndicatorView.swift in Sources */,
+				8FC0226E1DA63AD0009BC08C /* CALayer+Rotate.swift in Sources */,
+				8FC022881DA68B30009BC08C /* LiquidLayer.swift in Sources */,
 				8FCE6AFE1C7E04220079A587 /* CAShapeLayer.swift in Sources */,
 				8FCE6AF01C7DE60F0079A587 /* UIView.swift in Sources */,
+				8FC0227A1DA654B0009BC08C /* IndicatorView.swift in Sources */,
+				8FEDF81E1DA7B476009C9BB6 /* WaveView.swift in Sources */,
+				8FC0227C1DA65A60009BC08C /* LiquidView.swift in Sources */,
 				8F2426F61C77675E00519AD5 /* Animator.swift in Sources */,
 				8FCE6AFF1C7E04220079A587 /* CALayer.swift in Sources */,
+				8FC022841DA67DE1009BC08C /* CGFloat.swift in Sources */,
+				8FC022861DA67E4C009BC08C /* CGPoint.swift in Sources */,
+				8FEDF81C1DA7B24F009C9BB6 /* LiveShapeView.swift in Sources */,
+				8FC022721DA63EAB009BC08C /* ActivityIndicatorView.swift in Sources */,
 				8FCE6B251C7F1CA10079A587 /* Shake.swift in Sources */,
 				8F2426F41C77652D00519AD5 /* Animation.swift in Sources */,
 			);
@@ -419,7 +527,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F57EF5D1C7710C4008420F0 /* ViewController.swift in Sources */,
+				8FC022781DA64901009BC08C /* RotateViewController.swift in Sources */,
 				8F57EF5B1C7710C4008420F0 /* AppDelegate.swift in Sources */,
+				8FC022821DA67A9F009BC08C /* PeepholeView.swift in Sources */,
+				8FC022801DA65EFF009BC08C /* ProgressViewController.swift in Sources */,
+				8FEDF8201DA7DB49009C9BB6 /* WaveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +727,10 @@
 		8F57EF501C7703AB008420F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AnimationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.AnimationTests";
@@ -626,6 +742,10 @@
 		8F57EF511C7703AB008420F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AnimationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.AnimationTests";
@@ -639,6 +759,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -656,6 +777,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -671,6 +793,11 @@
 		8F57EF761C7710C4008420F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AnimationDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.AnimationDemoUITests";
@@ -684,6 +811,11 @@
 		8F57EF771C7710C4008420F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AnimationDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.AnimationDemoUITests";

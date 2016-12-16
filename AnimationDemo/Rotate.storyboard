@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dut-us-aZ7">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rotate-->
+        <scene sceneID="Izh-vc-w0v">
+            <objects>
+                <viewController id="Dut-us-aZ7" customClass="RotateViewController" customModule="AnimationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0FN-1S-5XB"/>
+                        <viewControllerLayoutGuide type="bottom" id="cjG-YR-hR5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FWd-GU-zQU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="continous rotating label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ou-0V-EfH">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ls-Te-gSA" customClass="ActivityIndicatorView" customModule="Animation">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6ls-Te-gSA" secondAttribute="height" multiplier="1:1" id="fgc-BC-cbE"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LN3-WC-YjT">
+                                <state key="normal" title="Rotate"/>
+                                <connections>
+                                    <action selector="handleButton:" destination="Dut-us-aZ7" eventType="touchUpInside" id="gn1-wm-cf3"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86z-FW-awH" customClass="ProgressIndicatorView" customModule="Animation">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="86z-FW-awH" secondAttribute="height" multiplier="1:2" id="z0X-as-Ev2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWf-XZ-wAg">
+                                <state key="normal" title="progress"/>
+                                <connections>
+                                    <action selector="handleProgressButton:" destination="Dut-us-aZ7" eventType="touchUpInside" id="0G0-lv-haf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cjG-YR-hR5" firstAttribute="top" secondItem="6ls-Te-gSA" secondAttribute="bottom" constant="40" id="0K9-bj-OZX"/>
+                            <constraint firstItem="86z-FW-awH" firstAttribute="top" secondItem="LN3-WC-YjT" secondAttribute="bottom" constant="8" symbolic="YES" id="0a7-kX-bJ9"/>
+                            <constraint firstItem="1ou-0V-EfH" firstAttribute="top" secondItem="86z-FW-awH" secondAttribute="bottom" constant="8" symbolic="YES" id="Fqq-U4-IVg"/>
+                            <constraint firstItem="LN3-WC-YjT" firstAttribute="top" secondItem="0FN-1S-5XB" secondAttribute="bottom" constant="8" symbolic="YES" id="Hqj-Gb-fgk"/>
+                            <constraint firstItem="TWf-XZ-wAg" firstAttribute="top" secondItem="0FN-1S-5XB" secondAttribute="bottom" constant="8" symbolic="YES" id="PQe-Qu-bRq"/>
+                            <constraint firstItem="1ou-0V-EfH" firstAttribute="centerY" secondItem="FWd-GU-zQU" secondAttribute="centerY" id="Q0H-uG-qN7"/>
+                            <constraint firstItem="TWf-XZ-wAg" firstAttribute="leading" secondItem="FWd-GU-zQU" secondAttribute="leading" id="QAc-vQ-O6T"/>
+                            <constraint firstItem="6ls-Te-gSA" firstAttribute="top" secondItem="1ou-0V-EfH" secondAttribute="bottom" constant="40" id="YsC-9K-v5p"/>
+                            <constraint firstItem="6ls-Te-gSA" firstAttribute="centerX" secondItem="FWd-GU-zQU" secondAttribute="centerX" id="ZdS-lb-kNF"/>
+                            <constraint firstItem="1ou-0V-EfH" firstAttribute="centerX" secondItem="FWd-GU-zQU" secondAttribute="centerX" id="bUt-dA-7fe"/>
+                            <constraint firstItem="LN3-WC-YjT" firstAttribute="trailing" secondItem="FWd-GU-zQU" secondAttribute="trailingMargin" id="q8t-rH-1gu"/>
+                            <constraint firstItem="86z-FW-awH" firstAttribute="centerX" secondItem="FWd-GU-zQU" secondAttribute="centerX" id="yIm-1d-scH"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Rotate" id="9md-br-FXE"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="6ls-Te-gSA" id="FrE-Wq-PdZ"/>
+                        <outlet property="label" destination="1ou-0V-EfH" id="t8C-MZ-5nA"/>
+                        <outlet property="progressIndicator" destination="86z-FW-awH" id="dBo-xX-Hii"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oh7-7M-RPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-148" y="-28"/>
+        </scene>
+    </scenes>
+</document>

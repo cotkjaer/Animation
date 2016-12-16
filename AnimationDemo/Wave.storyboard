@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VK6-Xb-Ivf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wave-->
+        <scene sceneID="wI5-x3-azh">
+            <objects>
+                <viewController id="VK6-Xb-Ivf" customClass="WaveViewController" customModule="AnimationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KFH-fF-psE"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Fp-ge-PnQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6uz-rZ-cNX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HU9-XB-H8D" customClass="OverlappingWavesView" customModule="Animation">
+                                <rect key="frame" x="16" y="28" width="343" height="582"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="0.51147629310344822" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbz-OE-h5I" customClass="PeepholeView" customModule="AnimationDemo" customModuleProvider="target">
+                                <rect key="frame" x="16" y="28" width="343" height="582"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BQM-Wk-USa">
+                                        <rect key="frame" x="28" y="116" width="287" height="350"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Heavy" family="Avenir Next Condensed" pointSize="256"/>
+                                        <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="BQM-Wk-USa" firstAttribute="centerX" secondItem="wbz-OE-h5I" secondAttribute="centerX" id="W3U-sL-B6k"/>
+                                    <constraint firstItem="BQM-Wk-USa" firstAttribute="centerY" secondItem="wbz-OE-h5I" secondAttribute="centerY" id="mtX-dW-6be"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HU9-XB-H8D" firstAttribute="leading" secondItem="6uz-rZ-cNX" secondAttribute="leadingMargin" id="2MQ-wT-Igo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HU9-XB-H8D" secondAttribute="trailing" id="HZv-gr-ggw"/>
+                            <constraint firstItem="wbz-OE-h5I" firstAttribute="leading" secondItem="HU9-XB-H8D" secondAttribute="leading" id="R4U-xv-Pcw"/>
+                            <constraint firstItem="wbz-OE-h5I" firstAttribute="top" secondItem="HU9-XB-H8D" secondAttribute="top" id="WOv-3i-rVU"/>
+                            <constraint firstItem="HU9-XB-H8D" firstAttribute="top" secondItem="KFH-fF-psE" secondAttribute="bottom" constant="8" symbolic="YES" id="WrY-RQ-VTR"/>
+                            <constraint firstItem="wbz-OE-h5I" firstAttribute="bottom" secondItem="HU9-XB-H8D" secondAttribute="bottom" id="bkM-dZ-Mnf"/>
+                            <constraint firstItem="wbz-OE-h5I" firstAttribute="trailing" secondItem="HU9-XB-H8D" secondAttribute="trailing" id="o8R-ET-03V"/>
+                            <constraint firstItem="7Fp-ge-PnQ" firstAttribute="top" secondItem="HU9-XB-H8D" secondAttribute="bottom" constant="8" symbolic="YES" id="rCX-Ul-VwQ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Wave" id="5vu-vn-1yS"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="label" destination="BQM-Wk-USa" id="6lh-3o-Go0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ppf-ez-Tnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="73"/>
+        </scene>
+    </scenes>
+</document>

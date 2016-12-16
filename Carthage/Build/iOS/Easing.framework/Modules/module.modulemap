@@ -1,0 +1,10 @@
+framework module Easing {
+  umbrella header "Easing.h"
+
+  export *
+  module * { export * }
+}
+
+module Easing.Swift {
+    header "Easing-Swift.h"
+}

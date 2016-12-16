@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="buY-KV-1Aq">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Progress View Controller-->
+        <scene sceneID="ei8-Ua-Tmm">
+            <objects>
+                <viewController id="TPc-1c-ylR" customClass="ProgressViewController" customModule="AnimationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4fW-xL-VuW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Trj-6Q-vBc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ded-aw-XJj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6k-a3-GTc" customClass="LiquidView" customModule="Animation">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="leftStartsUp" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="velocity">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrO-4n-npG" customClass="LiquidView" customModule="Animation">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="leftStartsUp" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="velocity">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1m1-j4-66U" customClass="LiquidView" customModule="Animation">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="leftStartsUp" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="velocity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHZ-4h-ubs" customClass="PeepholeView" customModule="AnimationDemo" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="1m1-j4-66U" secondAttribute="trailing" id="0AE-wq-JaJ"/>
+                            <constraint firstItem="1m1-j4-66U" firstAttribute="leading" secondItem="g6k-a3-GTc" secondAttribute="leading" id="0ql-GY-5HJ"/>
+                            <constraint firstItem="qrO-4n-npG" firstAttribute="top" secondItem="g6k-a3-GTc" secondAttribute="top" id="1XA-kG-8is"/>
+                            <constraint firstItem="qrO-4n-npG" firstAttribute="bottom" secondItem="g6k-a3-GTc" secondAttribute="bottom" id="2dv-tw-Z3b"/>
+                            <constraint firstItem="Trj-6Q-vBc" firstAttribute="top" secondItem="vHZ-4h-ubs" secondAttribute="bottom" constant="8" symbolic="YES" id="4dz-pG-Say"/>
+                            <constraint firstItem="1m1-j4-66U" firstAttribute="top" secondItem="g6k-a3-GTc" secondAttribute="top" id="9uy-r2-fFs"/>
+                            <constraint firstItem="qrO-4n-npG" firstAttribute="leading" secondItem="g6k-a3-GTc" secondAttribute="leading" id="IOc-xQ-hSk"/>
+                            <constraint firstItem="qrO-4n-npG" firstAttribute="top" secondItem="g6k-a3-GTc" secondAttribute="top" id="KRG-mR-8nI"/>
+                            <constraint firstItem="vHZ-4h-ubs" firstAttribute="leading" secondItem="1m1-j4-66U" secondAttribute="leading" id="Kff-bO-q6z"/>
+                            <constraint firstItem="1m1-j4-66U" firstAttribute="leading" secondItem="g6k-a3-GTc" secondAttribute="leading" id="QQc-Gf-Ed7"/>
+                            <constraint firstItem="qrO-4n-npG" firstAttribute="leading" secondItem="g6k-a3-GTc" secondAttribute="leading" id="U1P-ay-Z2l"/>
+                            <constraint firstItem="Trj-6Q-vBc" firstAttribute="top" secondItem="1m1-j4-66U" secondAttribute="bottom" constant="8" symbolic="YES" id="ZSB-F0-cEE"/>
+                            <constraint firstItem="vHZ-4h-ubs" firstAttribute="trailing" secondItem="1m1-j4-66U" secondAttribute="trailing" id="cKS-aq-bw0"/>
+                            <constraint firstItem="1m1-j4-66U" firstAttribute="trailing" secondItem="g6k-a3-GTc" secondAttribute="trailing" id="dgZ-2I-RjJ"/>
+                            <constraint firstItem="qrO-4n-npG" firstAttribute="trailing" secondItem="g6k-a3-GTc" secondAttribute="trailing" id="dhr-mY-vXH"/>
+                            <constraint firstItem="1m1-j4-66U" firstAttribute="top" secondItem="4fW-xL-VuW" secondAttribute="bottom" constant="8" symbolic="YES" id="efo-8a-jXB"/>
+                            <constraint firstItem="1m1-j4-66U" firstAttribute="bottom" secondItem="g6k-a3-GTc" secondAttribute="bottom" id="hwi-ff-f4d"/>
+                            <constraint firstItem="vHZ-4h-ubs" firstAttribute="top" secondItem="4fW-xL-VuW" secondAttribute="bottom" constant="8" symbolic="YES" id="lZP-j0-3ag"/>
+                            <constraint firstItem="qrO-4n-npG" firstAttribute="trailing" secondItem="g6k-a3-GTc" secondAttribute="trailing" id="mzu-Gc-6mX"/>
+                            <constraint firstItem="1m1-j4-66U" firstAttribute="leading" secondItem="ded-aw-XJj" secondAttribute="leadingMargin" id="wka-DL-ADN"/>
+                            <constraint firstItem="1m1-j4-66U" firstAttribute="trailing" secondItem="g6k-a3-GTc" secondAttribute="trailing" id="yz7-Zy-uDG"/>
+                            <constraint firstItem="1m1-j4-66U" firstAttribute="top" secondItem="g6k-a3-GTc" secondAttribute="top" id="zHO-mj-xV2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="u3C-Fb-rtD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tQS-q6-WhP">
+                            <connections>
+                                <action selector="startUndulating:" destination="TPc-1c-ylR" id="Ew9-FI-fGv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outletCollection property="progressViews" destination="g6k-a3-GTc" collectionClass="NSMutableArray" id="8ih-uD-jSo"/>
+                        <outletCollection property="progressViews" destination="qrO-4n-npG" collectionClass="NSMutableArray" id="u1J-3S-3Ks"/>
+                        <outletCollection property="progressViews" destination="1m1-j4-66U" collectionClass="NSMutableArray" id="9kE-Mz-jVt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eiM-br-a5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1279.2" y="76.911544227886068"/>
+        </scene>
+        <!--Progress-->
+        <scene sceneID="yYi-je-rcf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="buY-KV-1Aq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Progress" id="ibF-eC-Lip"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TzB-XK-ZpH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TPc-1c-ylR" kind="relationship" relationship="rootViewController" id="grz-bW-Lw4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ufv-gI-V7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="76.911544227886068"/>
+        </scene>
+    </scenes>
+</document>

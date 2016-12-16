@@ -8,6 +8,7 @@
 
 import XCTest
 import Animation
+import Easing
 
 class AnimationDemoUITests: XCTestCase {
         
@@ -29,6 +30,33 @@ class AnimationDemoUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+
+    func test_animation_completion()
+    {
+        let expectation = self.expectation(description: "animation did finish")
+        
+        var counter = 0
+
+        Animator.animate(duration: 2, delay: 0, timingFunction: TimingFunction(), closure: { (t) in
+            
+            counter += 1
+            
+            })
+        { (completed) in
+                
+                if completed { expectation.fulfill() }
+        }
+        
+        waitForExpectations(timeout: 5) { error in
+            
+            if let error = error
+            {
+                XCTFail("Error: \(error.localizedDescription)")
+            }
+            
+            XCTAssertGreaterThan(counter, 60)
+        }
+    }
     
     func test_animation()
     {
@@ -36,16 +64,15 @@ class AnimationDemoUITests: XCTestCase {
         
         var counter = 0
 
-        Animator.animate(2, delay: 0)
-            { t in
-                
-                counter++
-                
-                if t >= 1
-                {
-                    expectation.fulfill()
-                }
-        }
+        Animator.animate(duration: 2, closure: { (t) in
+          
+            counter += 1
+            
+            if t >= 1
+            {
+                expectation.fulfill()
+            }
+        })
         
         waitForExpectations(timeout: 5) { error in
             
