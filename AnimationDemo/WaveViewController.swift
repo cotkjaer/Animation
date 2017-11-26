@@ -22,11 +22,10 @@ class WaveViewController: UIViewController
         
         guard let label = label else { return }
 
-        let attributes = [NSStrokeWidthAttributeName: -1.0,
-                          NSStrokeColorAttributeName: label.textColor,
-                          NSForegroundColorAttributeName: color] as [String : Any]
-        
-        
+        let attributes: [NSAttributedStringKey : Any] = [NSAttributedStringKey.strokeWidth: -1.0,
+                          NSAttributedStringKey.strokeColor: label.textColor,
+                          NSAttributedStringKey.foregroundColor: color] //as! [String : Any]
+                
         label.attributedText = NSAttributedString(string: "17", attributes: attributes)
 
     }

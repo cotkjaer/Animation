@@ -7,4 +7,5 @@ framework module Easing {
 
 module Easing.Swift {
     header "Easing-Swift.h"
+    requires objc
 }

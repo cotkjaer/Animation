@@ -10,7 +10,7 @@ import UIKit
 import Animation
 import Easing
 
-private let π_2 = CGFloat(M_PI_2)
+private let π_2 = CGFloat.pi/2
 
 extension Double
 {

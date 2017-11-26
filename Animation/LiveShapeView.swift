@@ -128,7 +128,7 @@ open class LiveShapeView: UIView
             return displayLink
     }()
     
-    func updateLoop(sender: CADisplayLink)
+    @objc func updateLoop(sender: CADisplayLink)
     {
         update()
     }

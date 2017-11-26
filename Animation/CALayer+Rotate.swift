@@ -103,9 +103,6 @@ public extension CALayer
         rotationAnimation.toValue = rotation + (clockwise ? π2 : -π2)
         rotationAnimation.duration = 1 / speed
         rotationAnimation.repeatCount = Float.infinity
-//        rotationAnimation.isRemovedOnCompletion = false
-//        rotationAnimation.fillMode = kCAFillModeForwards
-        
         add(rotationAnimation, forKey: ContinousRotationAnimationKey)
     }
     

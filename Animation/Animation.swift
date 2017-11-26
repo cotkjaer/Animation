@@ -45,7 +45,7 @@ internal class Animation : NSObject
         completion(self)
     }
     
-    func executeAnimation()//(displayLink: CADisplayLink)
+    @objc func executeAnimation()//(displayLink: CADisplayLink)
     {
         //        guard displayLink == self.displayLink else { return }
         

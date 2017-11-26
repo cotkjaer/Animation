@@ -67,13 +67,13 @@ private class AnimationCompletionHandler : NSObject, CAAnimationDelegate
     let finished: (Bool) -> ()
     let started: () -> ()
     
-    private init(started: @escaping () -> () = { _ in return }, finished: @escaping (Bool) -> ())
+    private init(started: @escaping () -> () = {  return }, finished: @escaping (Bool) -> ())
     {
         self.started = started
         self.finished = finished
     }
     
-    fileprivate static func handler(started: @escaping () -> () = { _ in return }, finished: @escaping (Bool) -> ()) -> AnimationCompletionHandler
+    fileprivate static func handler(started: @escaping () -> () = {  return }, finished: @escaping (Bool) -> ()) -> AnimationCompletionHandler
     {
         let handler = AnimationCompletionHandler(started: started, finished: finished)
     
